@@ -1,0 +1,7 @@
+langchain
+openai
+streamlit
+streamlit-chat
+pexpect
+tabulate
+scikit-learn
