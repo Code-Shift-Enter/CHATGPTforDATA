@@ -14,10 +14,10 @@ if "generated" not in st.session_state:
 if "past" not in st.session_state:
     st.session_state["past"] = []
 
-from OPEN_AI_KEY_SAVE import OPEN_AI_KEY
+#from OPEN_AI_KEY_SAVE import OPEN_AI_KEY
 import os
-OPEN_AI_KEY = st.text_input("Please enter your OpenAI API-KEY", value="", type="password") 
-os.environ['OPENAI_API_KEY']= OPEN_AI_KEY 
+OPEN_AI_KEY = st.text_input("Please enter your OpenAI API-KEY", value="", type="password")
+os.environ['OPENAI_API_KEY'] = OPEN_AI_KEY
 openai_api_key = OPEN_AI_KEY
 
 from langchain.agents import load_tools, initialize_agent, AgentType, Tool, tool
