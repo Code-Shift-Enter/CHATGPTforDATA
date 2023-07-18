@@ -16,8 +16,9 @@ if "past" not in st.session_state:
 
 from OPEN_AI_KEY_SAVE import OPEN_AI_KEY
 import os
-os.environ['OPENAI_API_KEY']= OPEN_AI_KEY   
-openai_api_key = OPEN_AI_KEY   
+OPEN_AI_KEY = st.text_input("Please enter your OpenAI API-KEY", value="", type="password") 
+os.environ['OPENAI_API_KEY']= OPEN_AI_KEY 
+openai_api_key = OPEN_AI_KEY
 
 from langchain.agents import load_tools, initialize_agent, AgentType, Tool, tool
 from langchain.chat_models import ChatOpenAI
@@ -75,7 +76,7 @@ class SimpleStreamlitCallbackHandler(BaseCallbackHandler):
 ask_button = ""
 
 if df.shape[0] > 0:
-    agent = create_pandas_dataframe_agent(OpenAI(temperature=0), df,openai_api_key="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", verbose=True, return_intermediate_steps=True, agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION)
+    agent = create_pandas_dataframe_agent(OpenAI(temperature=0), df,openai_api_key=openai_api_key, verbose=True, return_intermediate_steps=True, agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION)
     user_input = get_text()
     ask_button = st.button('ask')
 else:
