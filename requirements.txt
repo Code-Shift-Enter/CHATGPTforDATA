@@ -5,3 +5,4 @@ streamlit-chat
 pexpect
 tabulate
 scikit-learn
+matplotlib
