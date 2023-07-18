@@ -4,5 +4,5 @@
 # In[ ]:
 
 
-OPEN_AI_KEY = "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"
+OPEN_AI_KEY = "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"
 
